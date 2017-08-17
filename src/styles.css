@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+
+body {
+	color: #888;
+	font-size: 16px;
+	text-align: center;
+}
+
+:focus {
+	box-shadow: none;
+	outline: none;
+}
+
+label {
+	font-weight: normal;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+	border-color: #aaa!important;
+	box-shadow: none;
+}
+
+.fa,
+.brand-color {
+	color: #2dbe60;
+}
+
+.no-results {
+	font-size: 1.8em;
+	margin-top: 1em;
+	text-align: center;
+}
+
+@media(min-width: 768px){
+	.user-data {
+		text-align: left;
+	}
+}
+
+@media(min-width: 992px) {
+	body {
+		text-align: left;
+	}
+}

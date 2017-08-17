@@ -1,0 +1,31 @@
+.brand {
+	background: #444;
+	padding: 10px 0;
+}
+
+.brand a {
+	color: #fff;
+	font-size: 30px;
+	text-align: center;
+	text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.brand a:active,
+.brand a:hover,
+.brand a:focus {
+	text-decoration: none;
+}
+
+.brand a span {
+	vertical-align: middle;
+}
+
+.brand a span.fa {
+	color: #2dbe60;
+	font-size: 50px;
+}
+
+.brand a span.logotype {
+	font-style: italic;
+	padding-left: 5px;
+}

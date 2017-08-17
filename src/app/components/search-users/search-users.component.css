@@ -1,0 +1,31 @@
+#search-wrapper {
+	margin: 4em auto 2em;
+}
+
+#search-users-input {
+	font-size: 2em;
+	height: 80px;
+	padding: 0 1em;
+}
+
+#search-users-input::placeholder {
+	font-style: italic;
+}
+
+#search-input-group {
+	position: relative;
+}
+
+.clear-search {
+	background: #f2f6f2;
+	border: 0;
+	border-radius: 0 4px 4px 0;
+	color: #2dbe60;
+	font-size: 2.5em;
+	height: 78px;
+	position: absolute;
+	right: 1px;
+	text-align: center;
+	top: 1px;
+	width: 78px;
+}

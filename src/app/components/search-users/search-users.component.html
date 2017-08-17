@@ -1,0 +1,24 @@
+<div id="search-wrapper" class="container">
+	<form class="form" novalidate [formGroup]="userSearchForm" (submit)="getUsers($event)">
+		<div id="search-input-group" class="form-group">
+			<input id="search-users-input" type="search" class="form-control" placeholder="{{ placeholderText }}" [(formControl)]="userSearchForm.controls['searchInput']" />
+			<button class="clear-search" type="button" (click)="clearSearch($event)" *ngIf="userSearchForm.value.searchInput !== null && userSearchForm.value.searchInput !== ''">
+				<span [ngClass]="{ 'fa-times': !isSearching, 'fa-spinner': isSearching, 'fa-pulse': isSearching }" class="fa"></span>
+			</button>
+			<p *ngIf="userSearchForm.controls['searchInput'].hasError('minlength')" class="alert alert-danger">
+				Please enter at least <strong>3 characters</strong> for greater search accuracy.
+			</p>
+			<p *ngIf="userSearchForm.controls['searchInput'].hasError('required') && !userSearchForm.controls['searchInput'].pristine" class="alert alert-danger">
+				Please enter a value to search.
+			</p>
+		</div>
+	</form>
+</div>
+
+<div class="container" [totalResults]="totalResults" [showResults]="users.length" [userList]="users" data-user-list></div>
+
+<div class="container no-results" [hidden]="users.length > 0">
+	<p>
+		<em>No results to display.</em>
+	</p>
+</div>

@@ -1,0 +1,33 @@
+<section id="search-meta" class="row" [hidden]="!showResults">
+	<div class="col-xs-12 col-sm-4 total-results">
+		<p>
+			<label>Results:</label>
+			<strong class="brand-color" [innerHtml]="maxCount"></strong>
+			 of <span [innerHtml]="totalCount"></span>
+		</p>
+	</div>
+
+	<div class="col-xs-12 col-sm-4 sort sort-mode text-center" [hidden]="!showResults">
+		<label>Showing: </label>
+		<button [ngClass]="{selected: sortMode === 'all'}" class="fa fa-github" (click)="applySortMode('all')"></button>
+		<button [ngClass]="{selected: sortMode === 'fav'}" class="fa fa-star"  (click)="applySortMode('fav')"></button>
+	</div>
+	
+	<div class="col-xs-12 col-sm-4 sort sort-order" [hidden]="!showResults">
+		<label>Order: </label>
+		<button [ngClass]="{selected: sortOrder === 'asc'}" class="fa fa-arrow-up" (click)="applySortOrder('asc')"></button>
+		<button [ngClass]="{selected: sortOrder === 'desc'}" class="fa fa-arrow-down" (click)="applySortOrder('desc')"></button>
+	</div>
+
+</section>
+
+<section *ngIf="sortMode === 'all'">
+	<div data-user *ngFor="let user of _userList; let odd=odd" [user]="user" [odd]="odd" (userSelected)="filterSelected()"></div>
+</section>
+
+<section *ngIf="sortMode === 'fav' && _userList.length > 0">
+	<div data-user *ngFor="let user of favUsers; let odd=odd" [user]="user" [odd]="odd" (userSelected)="filterSelected()" [hidden]="favUsers.length < 1"></div>
+	<p class="no-results">
+		<em>No favorite users to display.</em>
+	</p>
+</section>

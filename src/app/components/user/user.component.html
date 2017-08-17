@@ -1,0 +1,39 @@
+<div class="row user" [ngClass]="{odd: odd}">
+	<div class="user-avatar col-xs-12 col-sm-3">
+		<img class="img-responsive center-block" [src]="user.avatar_url" alt="{{ user.login + '_avatar' }}" />
+	</div>
+	<div class="col-xs-12 col-sm-9">
+		<div class="user-data row">
+			<div class="user-login col-xs-12">
+				<p>
+					<strong [innerHtml]="user.login"></strong>
+				</p>
+			</div>
+			<div class="col-xs-6 col-sm-9">
+				<div class="row user-meta">
+					<div class="user-type col-xs-12">
+						<p>
+							<span class="fa fa-user-circle"></span>
+							<span [innerHtml]="user.type"></span>
+						</p>
+					</div>
+					<div class="user-id col-xs-12">
+						<p>
+							<span class="fa fa-id-card-o"></span>
+							<span [innerHtml]="user.id"></span>
+						</p>
+					</div>
+					<div class="user-score col-xs-12">
+						<p>
+							<span class="fa fa-line-chart"></span>
+							<strong [innerHtml]="user.score | number: '2.0-0'"></strong><span>/100</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-3 fav-button-wrap">
+				<button class="fa fa-star fav-button" [ngClass]="{selected: user.isFavorite}" (click)="selectUser(user)"></button>
+			</div>
+		</div>
+	</div>
+</div>

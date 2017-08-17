@@ -1,0 +1,62 @@
+#search-meta {
+	font-size: 1.1em;
+	text-align: center;
+}
+
+#search-meta .total-results,
+#search-meta sort {
+	text-align: center;
+}
+
+#search-meta p {
+	margin: 0;
+}
+
+#search-meta label {
+	text-transform: uppercase;
+}
+
+.sort {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.sort .fa {
+	background: transparent;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	cursor: pointer;
+	line-height: 24px;
+	padding: 5px 10px;
+}
+
+.sort .fa.selected {
+	background: #2dbe60;
+	box-shadow: none;
+	color: #fff;
+}
+
+@media (max-width: 767px){
+
+	#search-meta .total-results,
+	#search-meta .sort-order {
+		margin: 0.5em 0;
+	}
+	.sort label {
+		min-width: 100px;
+		text-align: left;
+	}
+}
+
+@media (min-width: 768px) {
+
+	#search-meta .total-results {
+		margin-top: 5px;
+		text-align: left;
+	}
+	#search-meta .sort-order {
+		text-align: right;
+	}
+
+}
