@@ -47,7 +47,7 @@ export class SearchUsersComponent implements OnInit {
 	createSearchForm(): void {
 		this.userSearchForm = this.formBuilder.group({
 			searchInput: [
-				'John',
+				'',
 				Validators.compose([Validators.required, Validators.minLength(3)])
 			]
 		});
